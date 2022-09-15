@@ -1,4 +1,4 @@
-# Install PostgreSQL on Manjaro
+# Install PostgreSQL on Arch Linux / Manjaro
 
 Source: https://wiki.archlinux.org/index.php/PostgreSQL
 
