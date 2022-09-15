@@ -8,7 +8,9 @@ lsb_release -cd ; getconf LONG_BIT ; lsb_release -a
 ```
 
 2. Install postgresql package
-`sudo pacman -Sy ; sudo pacman -S postgresql ; postgres --version`
+```bash
+sudo pacman -Sy ; sudo pacman -S postgresql ; postgres --version
+```
 
 3. Switch to the postgres user account and initialize the database cluster:
 ```bash
