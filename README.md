@@ -8,7 +8,10 @@ lsb_release -cd ; getconf LONG_BIT ; lsb_release -a
 ```
 2. Install postgresql package:
 ```bash
-sudo pacman -Sy ; sudo pacman -S postgresql ; postgres --version
+sudo pamac update ; sudo pamac upgrade ; yay -Syyuu
+```
+```bash
+sudo pacman -Syyuu ; sudo pacman -S postgresql ; postgres --version
 ```
 3. Switch to the postgres user account and initialize the database cluster:
 ```bash
@@ -27,9 +30,16 @@ exit
 - `-E` is the default encoding for new databases.
 - `-D` is the default location for storing the database cluster.
 
-4. Start and enable the postgresql service
-
-`sudo systemctl enable --now postgresql.service`
+4. Start and enable the postgresql service:
+```bash
+sudo systemctl enable --now postgresql.service 
+```
+```bash
+sudo systemctl start --now postgresql.service 
+```
+```bash
+sudo systemctl status --now postgresql.service 
+```
 
 5. Create a Database and Database User
 
