@@ -2,18 +2,22 @@
 
 Source: https://wiki.archlinux.org/index.php/PostgreSQL
 
-1. Specification-OS
+1. Specification-OS:
 ```bash
 lsb_release -cd ; getconf LONG_BIT ; lsb_release -a
 ```
-2. Install postgresql package
+2. Install postgresql package:
 ```bash
 sudo pacman -Sy ; sudo pacman -S postgresql ; postgres --version
 ```
 3. Switch to the postgres user account and initialize the database cluster:
 ```bash
 sudo -iu postgres
+```
+```bash
 initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data/'
+```
+```bash
 exit
 ```
 
