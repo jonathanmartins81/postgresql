@@ -2,10 +2,13 @@
 
 Source: https://wiki.archlinux.org/index.php/PostgreSQL
 
-1. Install postgresql package
+1. Specification-OS
+`lsb_release -cd ; getconf LONG_BIT ; lsb_release -a`
+
+2. Install postgresql package
 `sudo pacman -Sy ; sudo pacman -S postgresql`
 
-2. Switch to the postgres user account and initialize the database cluster:
+3. Switch to the postgres user account and initialize the database cluster:
 ```bash
 sudo -iu postgres
 initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data/'
@@ -18,11 +21,11 @@ exit
 - `-E` is the default encoding for new databases.
 - `-D` is the default location for storing the database cluster.
 
-3. Start and enable the postgresql service
+4. Start and enable the postgresql service
 
 `sudo systemctl enable --now postgresql.service`
 
-4. Create a Database and Database User
+5. Create a Database and Database User
 
 `sudo su - postgres`
 
