@@ -6,12 +6,10 @@ Source: https://wiki.archlinux.org/index.php/PostgreSQL
 ```bash
 lsb_release -cd ; getconf LONG_BIT ; lsb_release -a
 ```
-
 2. Install postgresql package
 ```bash
 sudo pacman -Sy ; sudo pacman -S postgresql ; postgres --version
 ```
-
 3. Switch to the postgres user account and initialize the database cluster:
 ```bash
 sudo -iu postgres
@@ -66,46 +64,3 @@ Exit the SQL prompt to get back to the postgres user’s shell session:
 Exit out of the postgres user’s shell session to get back to your regular user’s shell session:
 
 `exit`
-
-## Django Connection
-
-Install the package to connect to our DB through Django
-
-`pip install django psycopg2`
-
-On `settings.py` we need to change the driver and configure the credentials to connect to our PostgreSQL DB:
-
-```python
-	DATABASES = {
-      'default': {
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'myproject',
-          'USER': 'myprojectuser',
-          'PASSWORD': 'password',
-          'HOST': 'localhost',
-          'PORT': '',
-      }
-  }
-```
-
-## Django testing
-For testing, Django will try to create a test database with the **USER** set in `settings.py` (in this case *myprojectuser*)
-
-In this case you need to give permission to create databases to that user.
-
-```bash
-# Log as postgres user and execute psql
-sudo su - postgres
-
-psql
-
-\du # List all roles with his permissions
-
-ALTER USER myprojectuser CREATEDB # Also can be used with ALTER ROLE (See Postgres docs)
-
-\du # Should list the new permission
-
-\q
-
-exit
-```
