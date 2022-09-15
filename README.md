@@ -3,7 +3,7 @@
 Source: https://wiki.archlinux.org/index.php/PostgreSQL
 
 1. Install postgresql package
-`sudo pacman -S postgresql`
+`sudo pacman -Sy ; sudo pacman -S postgresql`
 
 2. Switch to the postgres user account and initialize the database cluster:
 ```bash
