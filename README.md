@@ -42,4 +42,12 @@ sudo systemctl status --now postgresql.service
 ```
 
 5. Create a Database and Database User
-
+```bash
+sudo -u postgres createuser "username"
+```
+```bash
+sudo -u postgres createdb "database name"
+```
+```bash
+sudo -u postgres psql
+```
