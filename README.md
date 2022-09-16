@@ -49,10 +49,10 @@ sudo -u postgres createuser "username"
 sudo -u postgres createdb "database name"
 ```
 ```bash
-sudo -u postgres psql
+          sudo -u postgres psql
 ```
 ```bash
-\du
+postgres=# \du
 ```
 ```bash
  Role name |                         Attributes                         | Member of 
@@ -61,7 +61,7 @@ sudo -u postgres psql
  "username"|                                                            | {}
 ```
 ```bash
-\l
+postgres=# \l
 ```
 ```bash
    Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
@@ -75,11 +75,12 @@ sudo -u postgres psql
 (4 rows)
 ```
 ```bash
-alter user "username" with encrypted password 'password';
+postgres=# alter user "username" with encrypted password 'password';
 ```
 **If everything is ok, the message will appear:**
 `ALTER ROLE`
 ```bash
-grant all privileges on database "database name" to "username";
+postgres=# grant all privileges on database "database name" to "username";
 ```
+**If everything is ok, the message will appear:**
 `GRANT`
