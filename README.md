@@ -49,7 +49,7 @@ sudo -u postgres createuser "username"
 sudo -u postgres createdb "database name"
 ```
 ```bash
-          sudo -u postgres psql
+sudo -u postgres psql
 ```
 ```bash
 postgres=# \du
@@ -84,3 +84,6 @@ postgres=# grant all privileges on database "database name" to "username";
 ```
 **If everything is ok, the message will appear:**
 `GRANT`
+```bash
+postgres=# \q
+```
