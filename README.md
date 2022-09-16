@@ -51,3 +51,35 @@ sudo -u postgres createdb "database name"
 ```bash
 sudo -u postgres psql
 ```
+```bash
+\du
+```
+```bash
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ "username"|                                                            | {}
+```
+```bash
+\l
+```
+```bash
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | pt_BR.UTF-8 | pt_BR.UTF-8 | 
+ "database"| postgres | UTF8     | pt_BR.UTF-8 | pt_BR.UTF-8 | 
+ template0 | postgres | UTF8     | pt_BR.UTF-8 | pt_BR.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | pt_BR.UTF-8 | pt_BR.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(4 rows)
+```
+```bash
+alter user "username" with encrypted password 'password';
+```
+**If everything is ok, the message will appear:**
+`ALTER ROLE`
+```bash
+grant all privileges on database "database name" to "username";
+```
+`GRANT`
